@@ -1,0 +1,86 @@
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-rqs5t[0m
+{"level":"warn","ts":1583337462.500534,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583337462.5013034,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-lwddc[0m
+{"level":"warn","ts":1583337463.0025973,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583337463.0038054,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jstrachan-bdd-gh-1583312861-mas-xlpvq-jwkzj[0m
+{"level":"warn","ts":1583337469.1146915,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583337470.2851017,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/bdd-gh-1583312861.git @ v0.0.6 in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+failed to get helm version: failed to run 'helm version --short' command in directory '', output: 'Client: v2.14.3+g0e7f3b6
+Error: could not find tiller'
+old helm binary on the PATH so replacing with helm 3
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/bdd-gh-1583312861 main.go
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0304 15:58:02.951613      12 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/bdd-gh-1583312861"]            
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/04 15:58:06 pushed blob: sha256:8845f9c90fd6cec1e09a3b5e9e564a2bb5a2fd50fae514581cd57e2e3c407404
+2020/03/04 15:58:08 pushed blob: sha256:d05358ae461b42a17081fa3030f9161f4efc651532cd3275aa492cf9a9852a87
+2020/03/04 15:58:09 gcr.io/*********-multicluster/bdd-gh-1583312861:0.0.6: digest: sha256:30f56c4a2bc3ac5807da40d73ff1108a1d26b67656d4e091ee5c295e2f2a300d size: 428
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/bdd-gh-1583312861 to an unshallow repository
+Generating change log from git ref 8a6251fd3531e97668559928a263c021ebc13c0b => 421c3bcd05ecd7de9f9f21824aa2d553b31b14ee
+WARNING: No release found for *********/bdd-gh-1583312861 and tag v0.0.6 so creating a new release
+Updated the release information at https://github.com/*********/bdd-gh-1583312861/releases/tag/v0.0.6
+generated: /workspace/source/charts/bdd-gh-1583312861/templates/release.yaml
+Created Release bdd-gh-1583312861-0-0-6 resource in namespace **
+Updating PipelineActivity *********-bdd-gh-1583312861-master-6 with version 0.0.6
+Updated PipelineActivities *********-bdd-gh-1583312861-master-6 with release notes URL: https://github.com/*********/bdd-gh-1583312861/releases/tag/v0.0.6
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file bdd-gh-1583312861-0.0.6.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-xlpvq-6[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app bdd-gh-1583312861 version 0.0.6 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*********/environment-multicluster-dev-staging/pull/6
+Added label updatebot to Pull Request https://github.com/*********/environment-multicluster-dev-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-multicluster-dev-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-multicluster-dev-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-multicluster-dev-staging/pull/6
+got git provider status pending from PR https://github.com/*********/environment-multicluster-dev-staging/pull/6
+Pull Request https://github.com/*********/environment-multicluster-dev-staging/pull/6 is merged at sha 464c3b8955b4ff211d179d7e8c8be14896e2afc6
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names bdd-gh-1583312861, **-bdd-gh-1583312861, **-staging-bdd-gh-1583312861
