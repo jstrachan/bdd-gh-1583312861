@@ -1,0 +1,89 @@
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-x52bp[0m
+{"level":"warn","ts":1583312936.714675,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583312936.7152267,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-fqgr9[0m
+{"level":"warn","ts":1583312937.7438574,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583312937.7450004,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jstrachan-bdd-gh-1583312861-mas-tmbqj-rw7pp[0m
+{"level":"warn","ts":1583313012.9192972,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583313014.1372,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/bdd-gh-1583312861.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+failed to get helm version: failed to run 'helm version --short' command in directory '', output: 'Client: v2.14.3+g0e7f3b6
+Error: could not find tiller'
+old helm binary on the PATH so replacing with helm 3
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/bdd-gh-1583312861 main.go
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0304 09:10:29.057106      11 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0001] No base image, nothing to extract            
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0001] Taking snapshot of full filesystem...        
+[36mINFO[0m[0001] EXPOSE 8080                                  
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] ENTRYPOINT ["/bdd-gh-1583312861"]            
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] COPY ./bin/ /                                
+[36mINFO[0m[0001] Taking snapshot of files...                  
+2020/03/04 09:10:33 pushed blob: sha256:ed15c948f75854b9fe2f2b47464f1134832964a35c455d16dc524b9e2600f9d3
+2020/03/04 09:10:34 pushed blob: sha256:b1d2e5abfa7adb20114a11f6eb9978b1e3d2ac5293d90c100d313e54495f4511
+2020/03/04 09:10:35 gcr.io/*********-multicluster/bdd-gh-1583312861:0.0.1: digest: sha256:571c91ee0e6f032ad19a1b06ebea559a90087e96e5f29c031eb29831a71bd431 size: 428
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/bdd-gh-1583312861 to an unshallow repository
+Generating change log from git ref 39564632777ef2e010589db953048f0fde88ccdc => cd9b543467cedfcd7e87d40c67e6cdc0c8f2b871
+Associating user x-0 in users.jenkins.io with email james.strachan@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit ed001a89d7befec076383876432ac42b05ba622f with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for *********/bdd-gh-1583312861 and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/*********/bdd-gh-1583312861/releases/tag/v0.0.1
+generated: /workspace/source/charts/bdd-gh-1583312861/templates/release.yaml
+Created Release bdd-gh-1583312861-0-0-1 resource in namespace **
+Updating PipelineActivity *********-bdd-gh-1583312861-master-1 with version 0.0.1
+Updated PipelineActivities *********-bdd-gh-1583312861-master-1 with release notes URL: https://github.com/*********/bdd-gh-1583312861/releases/tag/v0.0.1
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file bdd-gh-1583312861-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mjstrachan-bdd-gh-1583312861-mas-tmbqj-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app bdd-gh-1583312861 version 0.0.1 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*********/environment-multicluster-dev-staging/pull/1
+Added label updatebot to Pull Request https://github.com/*********/environment-multicluster-dev-staging/pull/1
+got git provider status pending from PR https://github.com/*********/environment-multicluster-dev-staging/pull/1
+got git provider status pending from PR https://github.com/*********/environment-multicluster-dev-staging/pull/1
+got git provider status pending from PR https://github.com/*********/environment-multicluster-dev-staging/pull/1
+error: Pull request https://github.com/*********/environment-multicluster-dev-staging/pull/1 last commit has status failure for ref 7f492b4fa08b8fbcde7ce7daad98aef7159d560f
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-promote'. The execution of the pipeline has stopped.[0m
